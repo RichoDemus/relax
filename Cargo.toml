@@ -1,0 +1,15 @@
+[package]
+name = "relax"
+version = "0.1.0"
+authors = ["Richard Tjerngren <rtjerngren@spotify.com>"]
+edition = "2018"
+
+[features]
+gpio = ["gpio-cdev"]
+
+[dependencies]
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+serde_json = "1.0.57"
+gpio-cdev = { version = "0.4", optional = true }
+clap = "3.0.0-beta.1"
+rouille = "3.0.0"
