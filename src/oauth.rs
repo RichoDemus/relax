@@ -13,6 +13,8 @@ pub(crate) fn get_token(
     let user_url = format!("https://slack.com/oauth/authorize?scope={}&client_id={}&redirect_uri=http://localhost:8080", scopes, client_id);
 
     let (tx, rx) = mpsc::sync_channel(1);
+    // I couldn't find a good way to start and stop a webserver
+    // so lets just spawn a thread and forget about it ^^
     thread::spawn(move || {
         println!("Starting server, please visit http://localhost:8080");
         rouille::start_server("localhost:8080", move |request| {

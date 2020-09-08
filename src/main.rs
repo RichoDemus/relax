@@ -10,7 +10,6 @@ mod oauth;
 mod servo_controller;
 
 #[derive(Clap)]
-// #[clap]
 struct Opts {
     #[clap(short, long)]
     token: Option<String>,
