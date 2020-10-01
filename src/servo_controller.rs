@@ -61,7 +61,7 @@ fn set_disabled_print() {
 #[cfg(feature = "gpio")]
 fn set_enabled_gpio(file: &mut File) {
     println!("Raising");
-    file.write_all("0=100%\n".as_bytes())
+    file.write_all("0=50%\n".as_bytes())
         .expect("failed to set enabled");
     file.flush().expect("couldn't flush");
 }
@@ -69,7 +69,7 @@ fn set_enabled_gpio(file: &mut File) {
 #[cfg(feature = "gpio")]
 fn set_disabled_gpio(file: &mut File) {
     println!("Lowering");
-    file.write_all("0=0%\n".as_bytes())
+    file.write_all("0=10%\n".as_bytes())
         .expect("failed to set enabled");
     file.flush().expect("couldn't flush");
 }
